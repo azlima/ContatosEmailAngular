@@ -1,0 +1,35 @@
+<p class="message" ng-show="mensagem">{{mensagem}}</p>
+
+<form>
+	<div>
+	    <label>Para</label>
+
+	    <input ng-model="contato.Para" type="text">
+	</div>
+	
+	<div>
+	    <label>C&oacute;pia</label>
+
+	    <input ng-model="contato.Copia" type="text">
+	</div>
+	
+	<div>
+	    <label>C&oacute;pia Oculta</label>
+
+	    <input ng-model="contato.CopiaOculta" type="text">
+	</div>
+
+	<div>
+	    <label>Assunto</label>
+
+	    <input ng-model="contato.Assunto" type="text">
+	</div>
+	
+	<div>
+	    <label>Mensagem</label>
+
+	    <textarea ng-model="contato.Mensagem"></textarea>
+	</div>
+
+	<button ng-click="salvar()" ng-disabled="mensagem">Salvar</button>
+</form>

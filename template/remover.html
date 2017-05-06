@@ -1,0 +1,27 @@
+<p class="message" ng-show="mensagem">{{mensagem}}</p>
+
+<div ng-show="contato.Id">
+    <h3>Voc&ecirc; tem certeza que deseja remover esse contato?</h3>
+
+    <div class="noteArea">
+        <h3>{{contato.Para}}</h3>
+
+        <hr>
+		
+		<h3>{{contato.Copia}}</h3>
+
+        <hr>
+		
+		<h3>{{contato.CopiaOculta}}</h3>
+
+        <hr>
+		
+		<h3>{{contato.Assunto}}</h3>
+
+        <hr>
+
+        <p>{{contato.Mensagem}}</p>
+    </div>
+
+	<button ng-click="remover()" ng-disabled="mensagem">Remover</button>
+</div>

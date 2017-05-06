@@ -1,0 +1,31 @@
+<p class="message" ng-show="mensagem">{{mensagem}}</p>
+
+<div ng-show="contatos.length">
+    <table>
+        <caption>Lista de contatos e e-mails</caption>
+        <thead>
+            <tr>
+                <th>#</th>
+				<th>Para</th>
+                <th>Assunto</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contato in contatos">
+                <td>{{contato.Id}}</td>
+                <td>
+                    {{contato.Para}}
+                </td>
+                <td>
+                    <a href="/#/detalhes/{{contato.Id}}">{{contato.Assunto}}</a>
+                </td>
+                <td>
+                    <a href="/#/editar/{{contato.Id}}">Editar</a>
+                    <a href="/#/remover/{{contato.Id}}">Apagar</a>
+					<a href="/#/arquivo/{{contato.Id}}">Arquivo</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

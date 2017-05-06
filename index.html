@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>CRUD de Emails com Angular Js</title>
+        
+        <link href="css/stylesheet.css" rel="stylesheet">
+
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/vendor/angular-route.min.js"></script>
+        <script src="js/vendor/FileSaver.min.js"></script>
+
+        <script src="js/app/app.js"></script>
+        
+        <script src="js/app/contato/ContatoListarCtrl.js"></script>
+        <script src="js/app/contato/ContatoCriarCtrl.js"></script>
+        <script src="js/app/contato/ContatoDetalheCtrl.js"></script>
+        <script src="js/app/contato/ContatoEditarCtrl.js"></script>
+        <script src="js/app/contato/ContatoRemoverCtrl.js"></script>
+		<script src="js/app/contato/ContatoArquivoCtrl.js"></script>
+    </head>
+    <body ng-app="contato">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/#/criar">Novo</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h3><a href="/#/">Sistema de Contatos</a></h3>
+        </header>
+           
+        <article>
+            <div class="principal" ng-view></div>
+        </article> 
+    </body>
+</html>
