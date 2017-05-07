@@ -6,7 +6,7 @@ function ContatoEditarCtrl($scope, $http, $routeParams){
 
     var id = $routeParams.id;
 
-    var promise = $http.get('http://localhost:63233/api/contatos/' + id);
+    var promise = $http.get('http://contatosemailapi.apphb.com/api/contatos/' + id);
 
     promise.then(
         function(response){        
@@ -18,7 +18,7 @@ function ContatoEditarCtrl($scope, $http, $routeParams){
         $scope.mensagem = "Enviando os dados...";
 
         var promise = $http.put(
-            'http://localhost:63233/api/contatos/' + $scope.contato.Id, 
+            'http://contatosemailapi.apphb.com/api/contatos/' + $scope.contato.Id, 
             $scope.contato
         );
 
