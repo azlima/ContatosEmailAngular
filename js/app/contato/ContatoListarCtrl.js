@@ -1,11 +1,11 @@
 var module = angular.module("contato");
 
-module.controller("ContatoListarCtrl", ['$scope', '$http', ContatoListarCtrl]);
+module.controller("ContatoListarCtrl", ['apiUrl','$scope', '$http', ContatoListarCtrl]);
 
-function ContatoListarCtrl($scope, $http){
+function ContatoListarCtrl(apiUrl,$scope, $http){
     
     $scope.mensagem = "Carregando contatos...";
-    var promise = $http.get('http://localhost:63233/api/contatos/');
+    var promise = $http.get(apiUrl + 'api/contatos/');
 
     promise.then(
         // Em caso de sucesso

@@ -1,13 +1,13 @@
 var module = angular.module('contato');
 
-module.controller('ContatoArquivoCtrl',['$scope', '$http', '$routeParams', ContatoArquivoCtrl]);
+module.controller('ContatoArquivoCtrl',['apiUrl', '$scope', '$http', '$routeParams', ContatoArquivoCtrl]);
 
-function ContatoArquivoCtrl($scope, $http, $routeParams) {
+function ContatoArquivoCtrl(apiUrl, $scope, $http, $routeParams) {
    
     $scope.mensagem = "Enviando os dados...";
     var contatoid = $routeParams.id;
 
-    var promise = $http.get('http://localhost:63233/api/contatos/arquivo/' + contatoid);
+    var promise = $http.get(apiUrl + 'api/contatos/arquivo/' + contatoid);
 
     promise.then(
         // Em caso de sucesso

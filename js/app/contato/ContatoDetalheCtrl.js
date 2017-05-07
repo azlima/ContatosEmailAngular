@@ -1,12 +1,12 @@
 var module = angular.module('contato');
 
-module.controller('ContatoDetalheCtrl',['$scope', '$http', '$routeParams', ContatoDetalheCtrl]);
+module.controller('ContatoDetalheCtrl',['apiUrl', '$scope', '$http', '$routeParams', ContatoDetalheCtrl]);
 
-function ContatoDetalheCtrl($scope, $http, $routeParams) {
+function ContatoDetalheCtrl(apiUrl, $scope, $http, $routeParams) {
    
     var id = $routeParams.id;
 
-    var promise = $http.get('http://localhost:63233/api/contatos/' + id);
+    var promise = $http.get(apiUrl + 'api/contatos/' + id);
 
     promise.then(
         // Em caso de sucesso

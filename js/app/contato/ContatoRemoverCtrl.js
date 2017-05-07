@@ -1,12 +1,12 @@
 var module = angular.module('contato');
 
-module.controller('ContatoRemoverCtrl', ['$scope', '$http', '$routeParams', ContatoRemoverCtrl]);
+module.controller('ContatoRemoverCtrl', ['apiUrl', '$scope', '$http', '$routeParams', ContatoRemoverCtrl]);
 
-function ContatoRemoverCtrl($scope, $http, $routeParams) {
+function ContatoRemoverCtrl(apiUrl, $scope, $http, $routeParams) {
     
     var id = $routeParams.id;
     
-    var promise = $http.get('http://localhost:63233/api/contatos/' + id);
+    var promise = $http.get(apiUrl + 'api/contatos/' + id);
 
     promise.then(
         // Em caso de sucesso
@@ -22,7 +22,7 @@ function ContatoRemoverCtrl($scope, $http, $routeParams) {
     $scope.remover = function(){
         $scope.mensagem = 'Enviado os dados...';
 
-        var promise = $http.delete('http://localhost:63233/api/contatos/' + $scope.contato.Id);
+        var promise = $http.delete(apiUrl + 'api/contatos/' + $scope.contato.Id);
 
         promise.then(
             // Em caso de sucesso

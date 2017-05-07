@@ -1,5 +1,6 @@
 var module = angular.module('contato', ['ngRoute']);
 
+module.constant('apiUrl', 'http://contatosemailapi.apphb.com/');
 module.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/', {

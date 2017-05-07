@@ -1,12 +1,12 @@
 var module = angular.module('contato');
 
-module.controller('ContatoEditarCtrl', ['$scope', '$http', '$routeParams', ContatoEditarCtrl]);
+module.controller('ContatoEditarCtrl', ['apiUrl', '$scope', '$http', '$routeParams', ContatoEditarCtrl]);
 
-function ContatoEditarCtrl($scope, $http, $routeParams){
+function ContatoEditarCtrl(apiUrl, $scope, $http, $routeParams){
 
     var id = $routeParams.id;
 
-    var promise = $http.get('http://localhost:63233/api/contatos/' + id);
+    var promise = $http.get(apiUrl + 'api/contatos/' + id);
 
     promise.then(
         function(response){        
@@ -18,7 +18,7 @@ function ContatoEditarCtrl($scope, $http, $routeParams){
         $scope.mensagem = "Enviando os dados...";
 
         var promise = $http.put(
-            'http://localhost:63233/api/contatos/' + $scope.contato.Id, 
+            apiUrl + 'api/contatos/' + $scope.contato.Id, 
             $scope.contato
         );
 

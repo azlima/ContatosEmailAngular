@@ -1,13 +1,13 @@
 var module = angular.module('contato');
 
-module.controller('ContatoCriarCtrl', ['$scope', '$http', ContatoCriarCtrl]);
+module.controller('ContatoCriarCtrl', ['apiUrl', '$scope', '$http', ContatoCriarCtrl]);
 
-function ContatoCriarCtrl($scope, $http){
+function ContatoCriarCtrl(apiUrl, $scope, $http){
     
     $scope.salvar = function(){
 
         $scope.mensagem = "Enviando os dados...";
-        var promise = $http.post('http://localhost:63233/api/contatos/', 
+        var promise = $http.post(apiUrl + 'api/contatos/', 
             $scope.contato
         );
 
