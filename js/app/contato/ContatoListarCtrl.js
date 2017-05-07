@@ -5,7 +5,7 @@ module.controller("ContatoListarCtrl", ['$scope', '$http', ContatoListarCtrl]);
 function ContatoListarCtrl($scope, $http){
     
     $scope.mensagem = "Carregando contatos...";
-    var promise = $http.get('http://localhost:63233/api/contatos/');
+    var promise = $http.get('http://contatosemailapi.apphb.com/api/contatos/');
 
     promise.then(
         // Em caso de sucesso
