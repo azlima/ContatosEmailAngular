@@ -7,7 +7,7 @@ function ContatoArquivoCtrl($scope, $http, $routeParams) {
     $scope.mensagem = "Enviando os dados...";
     var contatoid = $routeParams.id;
 
-    var promise = $http.get('http://localhost:63233/api/contatos/arquivo/' + contatoid);
+    var promise = $http.get('http://contatosemailapi.apphb.com/api/contatos/arquivo/' + contatoid);
 
     promise.then(
         // Em caso de sucesso
